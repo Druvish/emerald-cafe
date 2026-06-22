@@ -16,8 +16,7 @@ const Layout = () => {
     { name: 'Home', path: '/' },
     { name: 'Menu', path: '/menu' },
     { name: 'Roastery', path: '/about' },
-    { name: 'Contact', path: '/contact' },
-    { name: 'KDS Dashboard', path: '/chef' }
+    { name: 'Contact', path: '/contact' }
   ];
 
   return (
@@ -248,8 +247,6 @@ const Layout = () => {
         <div className="max-w-7xl mx-auto border-t border-charcoal-card mt-8 pt-6 flex flex-col md:flex-row items-center justify-between text-[11px] text-cream/35">
           <p>© {new Date().getFullYear()} The Emerald Roast. Crafted in Pimpri-Chinchwad, Maharashtra.</p>
           <div className="flex space-x-5 mt-4 md:mt-0">
-            <Link to="/chef" className="hover:text-brass transition-colors">Kitchen Display System</Link>
-            <span className="cursor-default">|</span>
             <span className="cursor-default">Dark Editorial Specialty Coffee</span>
           </div>
         </div>
