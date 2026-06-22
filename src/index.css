@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  
+  --color-obsidian: #151311;
+  --color-brass: #b0a088;
+  --color-cream: #e7e1de;
+  --color-emerald: #88d982;
+  --color-charcoal-card: #211f1d;
+  --color-muted-sand: #988f85;
+}
+
+/* Custom base styles */
+@layer base {
+  body {
+    @apply font-sans bg-obsidian text-cream antialiased selection:bg-brass selection:text-obsidian m-0;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-cream font-semibold;
+  }
+
+  /* Custom brass scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #151311;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #b0a088;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #c5b59f;
+  }
+}
+
+/* Glassmorphism helpers for Dark theme */
+.glass-nav {
+  background: rgba(21, 19, 17, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(176, 160, 136, 0.12);
+}
+
+.glass-card {
+  background: rgba(33, 31, 29, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(176, 160, 136, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+}
+
+.glass-dark-card {
+  background: rgba(15, 13, 11, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(176, 160, 136, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Typewriter cursor blinking animation */
+.typewriter-cursor::after {
+  content: '|';
+  @apply text-brass ml-1;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Custom shadow glow for KDS alerts */
+.shadow-red-glow {
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.55);
+}
+
+.shadow-emerald-glow {
+  box-shadow: 0 0 15px rgba(136, 217, 130, 0.4);
+}
